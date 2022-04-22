@@ -1,0 +1,24 @@
+Ficha 5 - Raciocionio bbaseado em casos 
+
+Retrieve - Reuse - Revise - Retain
+
+Requisions : Base de casos -> Colunas - Atributos
+			       Linhas  - Nº de casos 
+		
+
+Problema: Novo caso (query)
+
+Solução CBR: Encontrar na base de casos os casos mais parecidos com a query
+
+	Retrieve: Calcula distâncias locais entre atributos (numéricos->(dist. euclidiana, dist. linear), 		          strings(enumerações-> dist. locais), datas, geográficos)
+		  Calcula similaridade global dos casos com a query
+		  Devolve casos com a Similaridade  global  > limiar(90-95)
+		  
+
+
+
+Similaridade global -> SG = (DL*PESOS) / somatório(pesos)
+
+distância local = 0 significa MATCH total
+
+Para destinguir bem os atributos temos que ter uma diferença de 5 mais ou menos e para isso temos de escolher uma boa escala
