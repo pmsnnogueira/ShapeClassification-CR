@@ -1,0 +1,12 @@
+package com.sample
+ 
+import com.sample.Paciente;
+import com.sample.Suspeita_Clinica;
+ 
+rule "Suspeita Baixa"
+    when
+        $s : Suspeita_Clinica( suspeita == "BAIXA")
+        $p:Paciente()
+    then
+       System.out.println("Suspeita " + $s.getSuspeita() + " no Paciente com NIF " + $p.getNIF() );
+end
