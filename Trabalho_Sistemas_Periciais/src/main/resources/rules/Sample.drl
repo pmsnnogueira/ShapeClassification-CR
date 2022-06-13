@@ -1,0 +1,12 @@
+package com.sample
+ 
+import com.sample.Paciente;
+ 
+rule "Suspeita Baixa"
+    when
+        $p : Paciente( diagnostico == "BAIXO")
+    then
+       System.out.println("Suspeita " + $p.getDiagnostico() + " no Paciente com NIF " + $p.getNIF() );
+end
+
+
