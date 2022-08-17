@@ -24,7 +24,7 @@ matrizBinaria = zeros(img_res(1) * img_res(2) * 3 , count);
 
 
 for st = str
-    
+
     numChar = strfind(st , ".");
     S = extractBefore(st , numChar);
     numChar1 = strfind(S , "/");
@@ -43,71 +43,73 @@ for st = str
 
     imagemBinaria = imbinarize(img); %usado para criar uma imagem binaria
     matrizBinaria( : , i) =  reshape(imagemBinaria , 1 , []);    %dar reshape do array e colocar a imagem binaria
-    
-    
+
+
 
     i = i + 1;
-    
+
 
 end
 
-    linha1 = repelem(1 , 5);
-    linha2 = repelem(2 , 5);
-    linha3 = repelem(3 , 5);
-    linha4 = repelem(4 , 5);
-    linha5 = repelem(5 , 5);
-    linha6 = repelem(6 , 5);
-    targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
+linha1 = repelem(1 , 5);
+linha2 = repelem(2 , 5);
+linha3 = repelem(3 , 5);
+linha4 = repelem(4 , 5);
+linha5 = repelem(5 , 5);
+linha6 = repelem(6 , 5);
+targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 
-    targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
+targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
-    %Treinar a Matriz
-    net = feedforwardnet(camadas);     %10 neuronios
-   
-    %Configurar as Camadas
-    %funcao de treino
+%Treinar a Matriz
+net = feedforwardnet(camadas);     %10 neuronios
+
+%Configurar as Camadas
+%funcao de treino
 
 %Tentar fazer depois passar estes valores por parametros !!!!
-    net.trainFcn = 'traingdx';
+net.trainFcn = 'traingdx';
 
-    net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
-    net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
+net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
+net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
 
-    net.divideFcn = 'dividerand';     
+net.divideFcn = 'dividerand';
 
-    net.divideParam.trainratio = 0.70;
+net.divideParam.trainratio = 0.70;
 
-    net.divideParam.valRatio = 0.15;
+net.divideParam.valRatio = 0.15;
 
-    net.divideParam.testRatio = 0.15;
-        
-    %Numero de treino
-    net.trainParam.epochs = 1000;  %1000 por default
+net.divideParam.testRatio = 0.15;
+
+%Numero de treino
+net.trainParam.epochs = 1000;  %1000 por default
 
 
 
-   %Treinar a rede
+%Treinar a rede
 
-    [net,tr] = train(net , matrizBinaria , targetMatrix);  
-    out = net(matrizBinaria);
-    disp(tr);
-    
-    r = 0;
-    for i = 1 : size(out , 2)
-        [~ , c] = max(out(:,i));
-        [~ , e] = max(targetMatrix(: , i));
-        if c == e
-            r = r + 1;
-        end
+[net,tr] = train(net , matrizBinaria , targetMatrix);
+out = net(matrizBinaria);
+disp(tr);
+
+r = 0;
+for i = 1 : size(out , 2)
+    [~ , c] = max(out(:,i));
+    [~ , e] = max(targetMatrix(: , i));
+    if c == e
+        r = r + 1;
     end
-    accuracy = (r / size(out , 2) ) * 100;
-    fprintf('(AULAS)Precisa total = %f\n' , accuracy);
+end
+accuracy = (r / size(out , 2) ) * 100;
+fprintf('(AULAS)Precisa total = %f\n' , accuracy);
 
 
-    
-    TTargets = targetMatrix(tr.testInd);
-    out_test = (out(tr.testInd) > 0.5);
-    accuracy = sum(out_test == TTargets) / length(tr.testInd);
-    fprintf('Precisao total = %f\n', accuracy * 100);
+
+TTargets = targetMatrix(tr.testInd);
+out_test = (out(tr.testInd) > 0.5);
+accuracy = sum(out_test == TTargets) / length(tr.testInd);
+fprintf('Precisao total = %f\n', accuracy * 100);
+
+
 
 
