@@ -84,15 +84,15 @@ net.divideParam.testRatio = 0.15;
 %Numero de treino
 net.trainParam.epochs = 1000;  %1000 por default
 
-
-
 %Treinar a rede
 
 [net,tr] = train(net , matrizBinaria , targetMatrix);
+
 out = net(matrizBinaria);
 disp(tr);
 
 r = 0;
+
 for i = 1 : size(out , 2)
     [~ , c] = max(out(:,i));
     [~ , e] = max(targetMatrix(: , i));
@@ -100,15 +100,13 @@ for i = 1 : size(out , 2)
         r = r + 1;
     end
 end
-accuracy = (r / size(out , 2) ) * 100;
-fprintf('(AULAS)Precisa total = %f\n' , accuracy);
+
+accuracy_test = numel(find(targetMatrix == uint8(round(net(matrizBinaria))))) / numel(targetMatrix);
+fprintf('Precisa Global = %f\n' , accuracy_test);
 
 
 
-TTargets = targetMatrix(tr.testInd);
-out_test = (out(tr.testInd) > 0.5);
-accuracy = sum(out_test == TTargets) / length(tr.testInd);
-fprintf('Precisao total = %f\n', accuracy * 100);
+
 
 
 

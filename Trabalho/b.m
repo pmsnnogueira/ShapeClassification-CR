@@ -92,6 +92,7 @@ net.trainParam.epochs = 1000;  %1000 por default
 out = net(matrizBinaria);
 disp(tr);
 
+TInput = matrizBinaria(:, tr.testInd);
 TTargetss = targetMatrix(:, tr.testInd);
 
 r = 0;
@@ -102,10 +103,23 @@ for i = 1 : size(out , 2)
         r = r + 1;
     end
 end
+
+
 accuracy = (r / size(out , 2) ) * 100;
 fprintf('(AULAS)Precisa total = %f\n' , accuracy);
 
 plotconfusion(targetMatrix,out); %% plot da matriz de confusão
+
+%% Save best neural networks
+
+if(accuracyTotal ~= 1)
+    numChar = strfind(num2str(round(accuracyTotal, 2)),'.'); 
+    S1 = extractBefore(num2str(round(accuracyTotal, 2)), numChar); 
+    S2 = extractAfter(num2str(round(accuracyTotal, 2)), numChar); 
+
+end
+
+
 
 
 
