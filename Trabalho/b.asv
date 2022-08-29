@@ -121,9 +121,8 @@ plotconfusion(targetMatrix,out); %% plot da matriz de confusão
 
 
 if (accuracy_global >= 0.8)
-    numChar = strfind(num2str(round(accuracy_global , 2)),'.') + 1;
-    ValorAccuracy = extractBefore(num2str(accuracy_global * 100, 2) , numChar);
-    nomeRede = "Trabalho/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) + "Accuracy" + ValorAccuracy + ".mat";
+
+    nomeRede = "Trabalho/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) + "Neuronios" + num2str(neuronios) + "Accuracy"+  ".mat";
     save(nomeRede, 'net');
 
 end
