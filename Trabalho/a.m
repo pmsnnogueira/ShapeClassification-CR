@@ -101,8 +101,8 @@ for i = 1 : size(out , 2)
     end
 end
 
-accuracy_test = numel(find(targetMatrix == uint8(round(net(matrizBinaria))))) / numel(targetMatrix);
-fprintf('Precisa Global = %f\n' , accuracy_test);
+accuracy_global = numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix);
+fprintf('Precisa Global = %f\n' , accuracy_global);
 
 
 

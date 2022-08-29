@@ -105,18 +105,18 @@ for i = 1 : size(out , 2)
 end
 
 
-accuracy = (r / size(out , 2) ) * 100;
-fprintf('(AULAS)Precisa total = %f\n' , accuracy);
+accuracy_global = numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix);
+fprintf('Precisa Global = %f\n' , accuracy_global);
+
+accuracy_test = numel(find(targetMatrix(tr.testInd) == uint8(round(out(tr.testInd))))) / numel(tr.testInd);
+fprintf('Precisa Teste = %f\n' , accuracy_test);
 
 plotconfusion(targetMatrix,out); %% plot da matriz de confusão
 
 %% Save best neural networks
 
-if(accuracyTotal ~= 1)
-    numChar = strfind(num2str(round(accuracyTotal, 2)),'.'); 
-    S1 = extractBefore(num2str(round(accuracyTotal, 2)), numChar); 
-    S2 = extractAfter(num2str(round(accuracyTotal, 2)), numChar); 
-
+if (accuracy_global >= 0.8)
+    save("Trabalho\Redes\BestNetWorks",'net')
 end
 
 
