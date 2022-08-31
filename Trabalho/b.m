@@ -4,7 +4,7 @@ close all;
 
 neuronios = 10;
 camadas = [neuronios neuronios neuronios neuronios neuronios neuronios];
-caminho = dir('Trabalho\Imagens\train\**\*.png');
+caminho = dir('Trabalho\Imagens\test\**\*.png');
 
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
 str = ficheiroCaminho;
@@ -51,12 +51,12 @@ for st = str
 
 end
 
-linha1 = repelem(1 , 50);
-linha2 = repelem(2 , 50);
-linha3 = repelem(3 , 50);
-linha4 = repelem(4 , 50);
-linha5 = repelem(5 , 50);
-linha6 = repelem(6 , 50);
+linha1 = repelem(1 , 10);
+linha2 = repelem(2 , 10);
+linha3 = repelem(3 , 10);
+linha4 = repelem(4 , 10);
+linha5 = repelem(5 , 10);
+linha6 = repelem(6 , 10);
 targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
