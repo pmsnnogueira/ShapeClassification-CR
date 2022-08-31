@@ -110,10 +110,10 @@ end
 
 
 accuracy_test = numel(find(targetMatrix(tr.testInd) == uint8(round(out(tr.testInd))))) / numel(tr.testInd);
-fprintf('Precisão Teste = %f\n' , accuracy_test*100);
+fprintf('Precisa Teste = %f\n' , accuracy_test*100);
 
 accuracy_global = numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix);
-fprintf('Precisão Global = %f\n' , accuracy_global*100);
+fprintf('Precisa Global = %f\n' , accuracy_global*100);
 
 plotconfusion(targetMatrix,out); %% plot da matriz de confusão
 
@@ -124,11 +124,9 @@ if (accuracy_global >= 0.8)
     numChar = strfind(num2str(round(accuracy_global , 2)),'.') + 1;
     ValorAccuracy = extractBefore(num2str(accuracy_global * 100, 2) , numChar);
     nomeRede = "Trabalho/Out/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) + "Accuracy" + ValorAccuracy + ".mat";
-    nomeConfusion= "Trabalho/Out/Confusion/B_Confusion_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) + "Accuracy" + ValorAccuracy + ".fig";
+    nomeConfusion= "Trabalho/Out/Redes/B_Confusion_" +net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) + "Accuracy" + ValorAccuracy  + ".fig";
 
-
-    savefig(nomeConfusion); %salvar a matriz de confusao
-    save(nomeRede, 'net');  %salvar a melhor rede
+    save(nomeRede, 'net');
 
 end
 
