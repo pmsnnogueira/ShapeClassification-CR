@@ -126,8 +126,8 @@ if (accuracy_global >= 0.8)
 
     numChar = strfind(num2str(round(accuracy_global , 2)),'.') + 1;
     ValorAccuracy = extractBefore(num2str(accuracy_global * 100, 2) , numChar);
-    nomeRede = "Trabalho/Out/Redes/B_TreinoPoligno" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas" + stringCamadas + "_Accuracy" + ValorAccuracy + ".mat";
-    nomeConfusion= "Trabalho/Out/Confusion/B_Confusion" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas " + stringCamadas + "_Accuracy" + ValorAccuracy + ".fig";
+    nomeRede = "Trabalho/Out/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas" + stringCamadas + "_Accuracy" + ValorAccuracy + ".mat";
+    nomeConfusion= "Trabalho/Out/Confusion/B_Confusion_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas " + stringCamadas + "_Accuracy" + ValorAccuracy + ".fig";
 
 
     savefig(nomeConfusion); %salvar a matriz de confusao
