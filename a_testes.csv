@@ -1,0 +1,55 @@
+// === 1 testing batch === // teste default
+
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,86.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,76.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,72.777778_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,72.222222_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,84.444444_accuracy
+
+// === 2 testing batch === // trocar função ativação com tansig
+
+10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,56.666667_accuracy
+10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,42.222222_accuracy
+10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,48.888889_accuracy
+10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,53.333333_accuracy
+10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,60.555556_accuracy
+
+// === 3 testing batch === // trocar função ativação com poslin
+
+10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+
+// === 4 testing batch === // trocar função ativação com satlins
+
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,93.888889_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,87.777778_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,92.777778_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,84.444444_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,88.333333_accuracy
+
+// === 5 testing batch === // trocar função ativação com radbasn
+
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+
+// === 6 testing batch === // trocar função ativação com compet
+
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+
+// === 7 testing batch === // trocar função de treinco com trainlm
+
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,91.111111_accuracy
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,91.111111_accuracy
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,90.000000_accuracy
+
+// === 8 testing batch === // trocar função de treinco com trainlm

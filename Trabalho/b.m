@@ -4,7 +4,7 @@ close all;
 
 neuronios = 10;
 camadas = [neuronios neuronios neuronios neuronios neuronios neuronios];
-caminho = dir('Trabalho\Imagens\test\**\*.png');
+caminho = dir('Trabalho\Imagens\train\**\*.png');
 
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
 str = ficheiroCaminho;

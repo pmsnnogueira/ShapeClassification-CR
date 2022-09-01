@@ -4,7 +4,10 @@ close all;
 
 neuronios = 10;
 camadas = [neuronios neuronios neuronios neuronios neuronios neuronios];
+
 caminho = dir('Trabalho\Imagens\start\**\*.png');
+
+fileID = fopen("a_testes.csv", "a");
 
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
 str = ficheiroCaminho;
@@ -62,13 +65,13 @@ targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet(camadas);     %10 neuronios
+net = feedforwardnet([neuronios]);     %10 neuronios
 
 %Configurar as Camadas
 %funcao de treino
 
 %Tentar fazer depois passar estes valores por parametros !!!!
-net.trainFcn = 'traingdx';
+net.trainFcn = 'trainbr';
 
 net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
 net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
@@ -101,8 +104,17 @@ for i = 1 : size(out , 2)
     end
 end
 
-accuracy_global = numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix);
+accuracy_global = (numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix))*100;
+fprintf(fileID, "%d_topologia,%s_fTreino,%s_fCamadaSaida,%s_fCamadaEntrada,%s_fDivisao,%f_trainRatio,%f_valRation,%f_testRatio," + ...
+    "%d_epochs,%f_accuracy\n", neuronios,net.trainFcn , ...
+net.layers{end}.transferFcn,...
+net.layers{1:end-1}.transferFcn,net.divideFcn,net.divideParam.trainratio ,...
+net.divideParam.valRatio,net.divideParam.testRatio,net.trainParam.epochs, ...
+accuracy_global);
+
 fprintf('Precisa Global = %f\n' , accuracy_global);
+
+fclose(fileID);
 
 
 
