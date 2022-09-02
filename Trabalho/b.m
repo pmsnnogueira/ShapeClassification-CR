@@ -51,18 +51,18 @@ for st = str
 
 end
 
-linha1 = repelem(1 , 10);
-linha2 = repelem(2 , 10);
-linha3 = repelem(3 , 10);
-linha4 = repelem(4 , 10);
-linha5 = repelem(5 , 10);
-linha6 = repelem(6 , 10);
+linha1 = repelem(1 , 50);
+linha2 = repelem(2 , 50);
+linha3 = repelem(3 , 50);
+linha4 = repelem(4 , 50);
+linha5 = repelem(5 , 50);
+linha6 = repelem(6 , 50);
 targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet(camadas);     %6 neuronios
+net = feedforwardnet([neuronios]);     %6 neuronios
 
 %Configurar as Camadas
 %funcao de treino
@@ -72,7 +72,7 @@ trainRatio = 0.70;
 valRatio = 0.15;
 testRatio = 0.15;
 %Tentar fazer depois passar estes valores por parametros !!!!
-net.trainFcn = 'traingdx';
+net.trainFcn = 'trainbfg';
 
 net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
 net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
