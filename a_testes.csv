@@ -1,116 +1,67 @@
-// === 1 testing batch === // teste default
+// === 1 Batch === // Rede Base
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
 
-10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,86.666667_accuracy
-10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,76.666667_accuracy
-10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,72.777778_accuracy
-10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,72.222222_accuracy
-10_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,84.444444_accuracy
+// === 2 Batch === // Alterar função de ativação camada escondida para compet
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,compet_fCamadaEntrada,_fDivisao1000_epochs,46.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,compet_fCamadaEntrada,_fDivisao1000_epochs,36.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,compet_fCamadaEntrada,_fDivisao1000_epochs,20.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,compet_fCamadaEntrada,_fDivisao1000_epochs,33.333333_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,compet_fCamadaEntrada,_fDivisao1000_epochs,50.000000_accuracy
 
-// === 2 testing batch === // trocar função ativação com tansig
+// === 3 Batch === // Alterar função de ativação camada escondida para satlins
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,satlins_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,satlins_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,satlins_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,satlins_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,satlins_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
 
-10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,56.666667_accuracy
-10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,42.222222_accuracy
-10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,48.888889_accuracy
-10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,53.333333_accuracy
-10_topologia,traingdx_fTreino,tansig_fCamadaSaida,purelin_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,60.555556_accuracy
+// === 4 Batch === // Alterar função de ativação camada escondida para radbasn
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,radbasn_fCamadaEntrada,_fDivisao1000_epochs,96.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,radbasn_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,radbasn_fCamadaEntrada,_fDivisao1000_epochs,96.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,radbasn_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,radbasn_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
 
-// === 3 testing batch === // trocar função ativação com poslin
+// === 5 Batch === // Alterar função de ativação camada escondida para netinv
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,netinv_fCamadaEntrada,_fDivisao1000_epochs,86.666667_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,netinv_fCamadaEntrada,_fDivisao1000_epochs,83.333333_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,netinv_fCamadaEntrada,_fDivisao1000_epochs,60.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,netinv_fCamadaEntrada,_fDivisao1000_epochs,80.000000_accuracy
+10_topologia,traingdx_fTreino,purelin_fCamadaSaida,netinv_fCamadaEntrada,_fDivisao1000_epochs,80.000000_accuracy
 
-10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,poslin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
+// === 6 Batch === // Alterar função de ativação camada de saída para netinv
+10_topologia,traingdx_fTreino,netinv_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,netinv_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,13.333333_accuracy
+10_topologia,traingdx_fTreino,netinv_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,20.000000_accuracy
+10_topologia,traingdx_fTreino,netinv_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,16.666667_accuracy
+10_topologia,traingdx_fTreino,netinv_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,16.666667_accuracy
 
-// === 4 testing batch === // trocar função ativação com satlins
+// === 7 Batch === // Alterar função de ativação camada de saída para radbasn
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,96.666667_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,96.666667_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,83.333333_accuracy
+10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
 
-10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,93.888889_accuracy
-10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,87.777778_accuracy
-10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,92.777778_accuracy
-10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,84.444444_accuracy
-10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,88.333333_accuracy
+// === 8 Batch === // Alterar função de ativação camada de saída para logsig
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,83.333333_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,86.666667_accuracy
+10_topologia,traingdx_fTreino,satlins_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
 
-// === 5 testing batch === // trocar função ativação com radbasn
+// === 9 Batch === // Alterar função de ativação camada de saída para compet
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,13.333333_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,10.000000_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,10.000000_accuracy
+10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,16.666667_accuracy
 
-10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,radbasn_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-
-// === 6 testing batch === // trocar função ativação com compet
-
-10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-10_topologia,traingdx_fTreino,compet_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.70_trainRatio,0.15_valRation,0.15_testRatio,1000_epochs,16.666667_accuracy
-
-// === 7 testing batch === // trocar função de treinco com trainlm
-
-10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,91.111111_accuracy
-10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,91.111111_accuracy
-10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,90.000000_accuracy
-
-// === 8 testing batch === // trocar função de treinco com trainbr
-10_topologia,trainbr_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,97.222222_accuracy
-
-// === 9 testing batch === // trocar função de treinco com trainbfg
-10_topologia,trainbfg_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,84.444444_accuracy
-
-// === 10 testing batch === // trocar o numero de camadas com 25
-
-25_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,72.222222_accuracy
-25_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,91.666667_accuracy
-25_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,77.222222_accuracy
-25_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,81.111111_accuracy
-25_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,76.111111_accuracy
-
-// === 11 testing batch === // trocar o numero de camadas com 50
-50_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,89.444444_accuracy
-50_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,70.000000_accuracy
-50_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,88.333333_accuracy
-50_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,84.444444_accuracy
-50_topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,68.888889_accuracy
-
-// === 12 testing batch === // trocar o numero de camadas com 10 10
-10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,69.444444_accuracy
-10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,82.777778_accuracy
-10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,85.555556_accuracy
-10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,90.000000_accuracy
-10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,75.555556_accuracy
-
-// === 13 testing batch === // trocar o numero de camadas com 25 25
-25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,93.333333_accuracy
-25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,82.777778_accuracy
-25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,85.555556_accuracy
-25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,67.777778_accuracy
-25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,92.222222_accuracy
-
-// === 14 testing batch === // trocar o numero de camadas com 50 50
-50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,87.222222_accuracy
-50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,73.888889_accuracy
-50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,80.555556_accuracy
-50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,88.888889_accuracy
-50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,70.555556_accuracy
-
-// === 15 testing batch === // trocar o numero de camadas com 10 10 10
-10_10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,83.888889_accuracy
-10_10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,76.666667_accuracy
-10_10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,71.666667_accuracy
-10_10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,85.000000_accuracy
-10_10_10topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,84.444444_accuracy
-
-// === 16 testing batch === // trocar o numero de camadas com 25 25 25
-25_25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,81.111111_accuracy
-25_25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,88.333333_accuracy
-25_25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,81.111111_accuracy
-25_25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,86.666667_accuracy
-25_25_25topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,91.666667_accuracy
-
-// === 17 testing batch === // trocar o numero de camadas com 50 50 50
-50_50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,88.333333_accuracy
-50_50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,94.444444_accuracy
-50_50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,85.000000_accuracy
-50_50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,62.777778_accuracy
-50_50_50topologia,traingdx_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,dividerand_fDivisao,0.700000_trainRatio,0.150000_valRation,0.150000_testRatio,1000_epochs,72.222222_accuracy
+// === 10 Batch === // Alterar função de treino para trainlm
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy
+10_topologia,trainlm_fTreino,purelin_fCamadaSaida,tansig_fCamadaEntrada,_fDivisao1000_epochs,100.000000_accuracy

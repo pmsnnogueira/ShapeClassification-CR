@@ -3,7 +3,6 @@ clear;
 close all;
 
 neuronios = 10;
-camadas = [neuronios neuronios neuronios neuronios neuronios neuronios];
 
 caminho = dir('Trabalho\Imagens\start\**\*.png');
 
@@ -23,7 +22,7 @@ end
 disp(count);
 
 img_res = [28 28];    %Tamanho do redimensionamento das imagens
-matrizBinaria = zeros(img_res(1) * img_res(2) * 3 , count);
+matrizBinaria = zeros(img_res(1) * img_res(2) , count);
 
 
 for st = str
@@ -40,8 +39,9 @@ for st = str
     %stt = sprintf(fileStList);
 
     img = imread(fileStList);
-    %img = rgb2gray(img);
     img = imresize(img , img_res);
+    img = rgb2gray(img);
+    
 
 
     imagemBinaria = imbinarize(img); %usado para criar uma imagem binaria
@@ -54,6 +54,7 @@ for st = str
 
 end
 
+
 linha1 = repelem(1 , 5);
 linha2 = repelem(2 , 5);
 linha3 = repelem(3 , 5);
@@ -65,24 +66,18 @@ targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet(camadas);     %10 neuronios
+net = feedforwardnet([neuronios]);     %10 neuronios
 
 %Configurar as Camadas
 %funcao de treino
 
 %Tentar fazer depois passar estes valores por parametros !!!!
-net.trainFcn = 'traingdx';
+net.trainFcn = 'trainlm';
 
 net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
 net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
 
-net.divideFcn = 'dividerand';
-
-net.divideParam.trainratio = 0.70;
-
-net.divideParam.valRatio = 0.15;
-
-net.divideParam.testRatio = 0.15;
+net.divideFcn = '';
 
 %Numero de treino
 net.trainParam.epochs = 1000;  %1000 por default
@@ -92,7 +87,6 @@ net.trainParam.epochs = 1000;  %1000 por default
 [net,tr] = train(net , matrizBinaria , targetMatrix);
 
 out = net(matrizBinaria);
-disp(tr);
 
 r = 0;
 
@@ -104,12 +98,13 @@ for i = 1 : size(out , 2)
     end
 end
 
-accuracy_global = (numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix))*100;
-fprintf(fileID, "%d_topologia,%s_fTreino,%s_fCamadaSaida,%s_fCamadaEntrada,%s_fDivisao,%f_trainRatio,%f_valRation,%f_testRatio," + ...
+accuracy_global = (r/size(out,2)*100);
+
+fprintf(fileID, "%d_topologia,%s_fTreino,%s_fCamadaSaida,%s_fCamadaEntrada,%s_fDivisao" + ...
     "%d_epochs,%f_accuracy\n", neuronios,net.trainFcn , ...
 net.layers{end}.transferFcn,...
-net.layers{1:end-1}.transferFcn,net.divideFcn,net.divideParam.trainratio ,...
-net.divideParam.valRatio,net.divideParam.testRatio,net.trainParam.epochs, ...
+net.layers{1:end-1}.transferFcn,net.divideFcn,...
+net.trainParam.epochs, ...
 accuracy_global);
 
 fprintf('Precisa Global = %f\n' , accuracy_global);

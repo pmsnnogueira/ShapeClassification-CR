@@ -3,6 +3,7 @@ clear;
 close all;
 
 neuronios = 10;
+
 camadas = [neuronios neuronios neuronios neuronios neuronios neuronios];
 caminho = dir('Trabalho\Imagens\train\**\*.png');
 
@@ -20,7 +21,7 @@ end
 disp(count);
 
 img_res = [28 28];    %Tamanho do redimensionamento das imagens
-matrizBinaria = zeros(img_res(1) * img_res(2) * 3 , count);
+matrizBinaria = zeros(img_res(1) * img_res(2) , count);
 
 
 for st = str
@@ -37,10 +38,9 @@ for st = str
     %stt = sprintf(fileStList);
 
     img = imread(fileStList);
-    %img = rgb2gray(img);
     img = imresize(img , img_res);
-
-
+    img = rgb2gray(img);
+    
     imagemBinaria = imbinarize(img); %usado para criar uma imagem binaria
     matrizBinaria( : , i) =  reshape(imagemBinaria , 1 , []);    %dar reshape do array e colocar a imagem binaria
 
@@ -57,12 +57,13 @@ linha3 = repelem(3 , 50);
 linha4 = repelem(4 , 50);
 linha5 = repelem(5 , 50);
 linha6 = repelem(6 , 50);
+
 targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet([neuronios]);     %6 neuronios
+net = feedforwardnet([neuronios]);     %10 neuronios
 
 %Configurar as Camadas
 %funcao de treino
@@ -71,8 +72,9 @@ net = feedforwardnet([neuronios]);     %6 neuronios
 trainRatio = 0.70;
 valRatio = 0.15;
 testRatio = 0.15;
+
 %Tentar fazer depois passar estes valores por parametros !!!!
-net.trainFcn = 'trainbfg';
+net.trainFcn = 'traingdx';
 
 net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
 net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
@@ -94,12 +96,9 @@ net.trainParam.epochs = 1000;  %1000 por default
 
 [net,tr] = train(net , matrizBinaria , targetMatrix);
 out = net(matrizBinaria);
-disp(tr);
-
-TInput = matrizBinaria(:, tr.testInd);
-TTargetss = targetMatrix(:, tr.testInd);
 
 r = 0;
+
 for i = 1 : size(out , 2)
     [~ , c] = max(out(:,i));
     [~ , e] = max(targetMatrix(: , i));
@@ -109,11 +108,8 @@ for i = 1 : size(out , 2)
 end
 
 
-accuracy_test = numel(find(targetMatrix(tr.testInd) == uint8(round(out(tr.testInd))))) / numel(tr.testInd);
-fprintf('Precisão Teste = %f\n' , accuracy_test*100);
-
-accuracy_global = numel(find(targetMatrix == uint8(round(out)))) / numel(targetMatrix);
-fprintf('Precisão Global = %f\n' , accuracy_global*100);
+accuracy_global = (r/size(out,2)*100);
+fprintf('Precisão Global = %f\n' , accuracy_global);
 
 plotconfusion(targetMatrix,out); %% plot da matriz de confusão
 
@@ -124,8 +120,8 @@ if (accuracy_global >= 0.8)
     
     stringCamadas = extractAfter(num2str(size(camadas)),3);
 
-    numChar = strfind(num2str(round(accuracy_global , 2)),'.') + 1;
-    ValorAccuracy = extractBefore(num2str(accuracy_global * 100, 2) , numChar);
+    numChar = strfind(num2str(round(accuracy_test , 2)),'.') + 1;
+    ValorAccuracy = extractBefore(num2str(accuracy_test , 2) , numChar);
     nomeRede = "Trabalho/Out/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas" + stringCamadas + "_Accuracy" + ValorAccuracy + ".mat";
     nomeConfusion= "Trabalho/Out/Confusion/B_Confusion_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas " + stringCamadas + "_Accuracy" + ValorAccuracy + ".fig";
 
