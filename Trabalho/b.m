@@ -2,9 +2,9 @@ clc;
 clear;
 close all;
 
-neuronios = 10;
+neuronios = 25;
 
-camadas = [neuronios neuronios neuronios neuronios neuronios neuronios];
+camadas = [neuronios neuronios];
 caminho = dir('Trabalho\Imagens\train\**\*.png');
 
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
@@ -63,15 +63,15 @@ targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet([neuronios]);     %10 neuronios
+net = feedforwardnet(camadas);     %10 neuronios
 
 %Configurar as Camadas
 %funcao de treino
 %Variaveis
 
-trainRatio = 0.8;
-valRatio = 0.1;
-testRatio = 0.1;
+trainRatio = 0.7;
+valRatio = 0.15;
+testRatio = 0.15;
 
 %Tentar fazer depois passar estes valores por parametros !!!!
 net.trainFcn = 'trainlm';
@@ -108,8 +108,8 @@ for i = 1 : size(out , 2)
 end
 
 
-accuracy_global = (r/size(out,2)*100);
-fprintf('Precisão Global = %f\n' , accuracy_global);
+accuracy_global = (r/size(out,2));
+fprintf('Precisão Global = %f\n' , accuracy_global*100);
 
 plotconfusion(targetMatrix,out); %% plot da matriz de confusão
 
@@ -135,12 +135,12 @@ plotconfusion(TTargetss, out);
 %% Save best neural networks
 
 
-if (accuracy_teste >= 0.7)
+if (accuracy_global >= 0.8)
     
     stringCamadas = extractAfter(num2str(size(camadas)),3);
 
-    nomeRede = "Trabalho/Out/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas" + stringCamadas + "_Accuracy" + accuracy_teste + ".mat";
-    nomeConfusion= "Trabalho/Out/Confusion/B_Confusion_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas " + stringCamadas + "_Accuracy" + accuracy_teste + ".fig";
+    nomeRede = "Trabalho/Out/Redes/B_TreinoPoligno_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas" + stringCamadas + "_Neuronios" + neuronios + "_Accuracy" + accuracy_global + ".mat";
+    nomeConfusion= "Trabalho/Out/Confusion/B_Confusion_" + net.trainFcn + "_TrainR" + num2str(trainRatio) + "_VR" + num2str(valRatio) + "_TestR" + num2str(testRatio) +"_Camadas " + stringCamadas + "_Neuronios" + neuronios + "_Accuracy" + accuracy_global + ".fig";
 
 
     savefig(nomeConfusion); %salvar a matriz de confusao

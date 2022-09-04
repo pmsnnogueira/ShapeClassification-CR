@@ -63,21 +63,21 @@ targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet(neuronios neur);     %10 neuronios
+net = feedforwardnet([neuronios]);     %10 neuronios
 
 %Configurar as Camadas
 %funcao de treino
 %Variaveis
 
-trainRatio = 0.70;
-valRatio = 0.15;
-testRatio = 0.15;
+trainRatio = 0.8;
+valRatio = 0.1;
+testRatio = 0.1;
 
 %Tentar fazer depois passar estes valores por parametros !!!!
 net.trainFcn = 'trainlm';
 
-net.layers{end}.transferFcn = 'hardlim';    %funcoes de ativacao da camada de saida
-net.layers{1:end-1}.transferFcn = 'satlin'; %funcoes de ativacao das camadas escondidas
+net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
+net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
 
 net.divideFcn = 'dividerand';
 
@@ -135,7 +135,7 @@ plotconfusion(TTargetss, out);
 %% Save best neural networks
 
 
-if (accuracy_teste >= 0.7)
+if (accuracy_global >= 0.8)
     
     stringCamadas = extractAfter(num2str(size(camadas)),3);
 
