@@ -2,7 +2,7 @@ clc;
 clear;
 close all;
 
-neuronios = 10;
+neuronios = 50;
 
 caminho = dir('Trabalho\Imagens\start\**\*.png');
 
@@ -66,13 +66,13 @@ targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
 %Treinar a Matriz
-net = feedforwardnet([neuronios]);     %10 neuronios
+net = feedforwardnet([neuronios neuronios neuronios]);     %10 neuronios
 
 %Configurar as Camadas
 %funcao de treino
 
 %Tentar fazer depois passar estes valores por parametros !!!!
-net.trainFcn = 'trainlm';
+net.trainFcn = 'traingdx';
 
 net.layers{end}.transferFcn = 'purelin';    %funcoes de ativacao da camada de saida
 net.layers{1:end-1}.transferFcn = 'tansig'; %funcoes de ativacao das camadas escondidas
