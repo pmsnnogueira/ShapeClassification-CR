@@ -2,9 +2,9 @@ clc;
 clear;
 close all;
 
-neuronios = 25;
+neuronios = 10;
 
-camadas = [neuronios neuronios];
+camadas = [neuronios];
 caminho = dir('Trabalho\Imagens\train\**\*.png');
 
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
@@ -69,9 +69,9 @@ net = feedforwardnet(camadas);     %10 neuronios
 %funcao de treino
 %Variaveis
 
-trainRatio = 0.7;
-valRatio = 0.15;
-testRatio = 0.15;
+trainRatio = 0.8;
+valRatio = 0.1;
+testRatio = 0.1;
 
 %Tentar fazer depois passar estes valores por parametros !!!!
 net.trainFcn = 'trainlm';
