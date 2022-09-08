@@ -2,8 +2,8 @@ clc;
 clear;
 close all;
 
-load('Trabalho\Out\Redes\C_Test' , 'net');
-caminho = dir('Trabalho\Imagens\test\**\*.png');
+load('Trabalho\Out\Redes\B_Best\B_Best_Network_Accuracy0.98' , 'net');
+caminho = dir('Trabalho\Imagens\start\**\*.png');
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
 str = ficheiroCaminho;
 i = 1;
@@ -16,7 +16,7 @@ end
 disp(count);
 
 img_res = [28 28];    %Tamanho do redimensionamento das imagens
-matrizBinaria = zeros(img_res(1) * img_res(2) * 3 , count);
+matrizBinaria = zeros(img_res(1) * img_res(2), count);
 
 
 for st = str
@@ -31,11 +31,10 @@ for st = str
     St3 = extractAfter(S , numChar2);
     fileStList = St2 + '\' + St3 + '.png';
     %stt = sprintf(fileStList);
-
+    
     img = imread(fileStList);
-    %img = rgb2gray(img);
     img = imresize(img , img_res);
-
+    img = rgb2gray(img);
 
     imagemBinaria = imbinarize(img); %usado para criar uma imagem binaria
     matrizBinaria( : , i) =  reshape(imagemBinaria , 1 , []);    %dar reshape do array e colocar a imagem binaria
@@ -71,6 +70,6 @@ accuracy = (r / size(out , 2) ) * 100;
 fprintf('Precisa total = %f\n' , accuracy);
 
 %Guardar Rede
-rede = "Trabalho\Redes\C_RedeTreino" + ".mat";
+rede = "Trabalho\Out\Redes\C\C_RedeTreino" + "_Accuracy" + accuracy + "_start" + ".mat";
 save(rede , 'net');
 
