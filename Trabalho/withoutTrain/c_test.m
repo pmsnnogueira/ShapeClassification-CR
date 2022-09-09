@@ -2,7 +2,8 @@ clc;
 clear;
 close all;
 
-load('Trabalho\Out\Redes\B_Best\B_Best_Network_Accuracy0.98' , 'net');
+%load('Trabalho\Out\Redes\B_Best\B_Best_Network_Accuracy0.98' , 'net');
+load('Trabalho\Out\Redes\C\C_RedeReTreino_Accuracy100_test' , 'net');
 caminho = dir('Trabalho\Imagens\test\**\*.png');
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
 str = ficheiroCaminho;
@@ -70,6 +71,7 @@ accuracy = (r / size(out , 2) ) * 100;
 fprintf('Precisa total = %f\n' , accuracy);
 
 %Guardar Rede
-rede = "Trabalho\Out\Redes\C\C_RedeTreino" + "_Accuracy" + accuracy + "_test" + ".mat";
+%rede = "Trabalho\Out\Redes\C\C_RedeTreino" + "_Accuracy" + accuracy + "_test" + ".mat";
+rede = "Trabalho\Out\Redes\C\C_Test_RedeTreino" + "_Accuracy" + accuracy + "_test" + ".mat";
 save(rede , 'net');
 

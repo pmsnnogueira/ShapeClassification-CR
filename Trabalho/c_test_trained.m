@@ -2,9 +2,8 @@ clc;
 clear;
 close all;
 
-%load('Trabalho\Out\Redes\B_Best\B_Best_Network_Accuracy0.98' , 'net');
-load('Trabalho\Out\Redes\C\C_RedeReTreino_Accuracy100_test' , 'net');
-caminho = dir('Trabalho\Imagens\train\**\*.png');
+load('Trabalho\Out\Redes\B_Best\B_Best_Network_Accuracy0.98' , 'net');
+caminho = dir('Trabalho\Imagens\test\**\*.png');
 ficheiroCaminho = string({caminho.folder}) + '/' + string({caminho.name});
 str = ficheiroCaminho;
 i = 1;
@@ -44,17 +43,18 @@ for st = str
 
 end
 
-linha1 = repelem(1 , 50);
-linha2 = repelem(2 , 50);
-linha3 = repelem(3 , 50);
-linha4 = repelem(4 , 50);
-linha5 = repelem(5 , 50);
-linha6 = repelem(6 , 50);
+linha1 = repelem(1 , 10);
+linha2 = repelem(2 , 10);
+linha3 = repelem(3 , 10);
+linha4 = repelem(4 , 10);
+linha5 = repelem(5 , 10);
+linha6 = repelem(6 , 10);
 targetMatrix = [linha1 , linha2 , linha3 , linha4 , linha5 , linha6];
 
 targetMatrix = onehotencode(targetMatrix , 1 , 'ClassNames' , 1:6);  %especificar as classes para serem codificadas obter dados logicos
 
-out = sim(net , matrizBinaria);
+[net,tr] = train(net , matrizBinaria , targetMatrix);
+out = net(matrizBinaria);
 
 r = 0;
 for i = 1 : size(out , 2)
@@ -71,7 +71,6 @@ accuracy = (r / size(out , 2) ) * 100;
 fprintf('Precisa total = %f\n' , accuracy);
 
 %Guardar Rede
-%rede = "Trabalho\Out\Redes\C\C_RedeTreino" + "_Accuracy" + accuracy + "_train" + ".mat";
-rede = "Trabalho\Out\Redes\C\C_Test_RedeTreino" + "_Accuracy" + accuracy + "_train" + ".mat";
+rede = "Trabalho\Out\Redes\C\C_RedeReTreino" + "_Accuracy" + accuracy + "_test" + ".mat";
 save(rede , 'net');
 
