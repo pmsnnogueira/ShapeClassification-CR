@@ -24,7 +24,7 @@ accuracy = (r / size(out , 2) ) * 100;
 fprintf('Precisa total = %f\n' , accuracy);
 
 %Guardar Rede
-%rede = "Trabalho\Out\Redes\C\C_Rede" + "_Accuracy" + accuracy + "_test" + ".mat";
+%rede = "Trabalho\Out\Redes\C\C_RedeTreino" + "_Accuracy" + accuracy + "_test" + ".mat";
 rede = "Trabalho\Out\Redes\C\C_Test_RedeTreino" + "_Accuracy" + accuracy + "_test" + ".mat";
 save(rede , 'net');
 
