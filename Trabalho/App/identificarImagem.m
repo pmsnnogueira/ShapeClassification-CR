@@ -1,10 +1,14 @@
-function [resultado] = identificarImagem(nomeRede , nomeFicheiro)
+function [resultado] = identificarImagem(nomeRede , nomeFicheiro , imagem)
 
     caminhoRede = append("Out\Redes\B_Best\",nomeRede);
-    caminhoImagem = append("Imagens\start\square\",nomeFicheiro);
+    if(nomeFicheiro ~= "null")
+        caminhoImagem = append("Imagens\start\square\",nomeFicheiro);
+    else
+        caminhoImagem = nomeFicheiro;
+    end
     load(caminhoRede , 'net');
 
-    matrizBinaria = imagemBinaria(caminhoImagem);
+    matrizBinaria = imagemBinaria(caminhoImagem , imagem);
     out = sim(net , matrizBinaria);
     [~,b] = max(out);
 
