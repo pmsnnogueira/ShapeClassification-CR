@@ -1,6 +1,7 @@
 function [resultado] = identificarImagem(nomeRede , nomeFicheiro , imagem)
 
-    caminhoRede = append("Out\Redes\B_Best\",nomeRede);
+    caminhoRede = append("Trabalho\Out\Redes\App\",nomeRede);
+
     if(nomeFicheiro ~= "null")
         caminhoImagem = append("Imagens\",nomeFicheiro);
     else

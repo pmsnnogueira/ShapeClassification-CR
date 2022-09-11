@@ -1,6 +1,6 @@
 function[accuracy_global] = carregarRede(nomeRede , nomePasta)
 
-    caminhoRede = append("Out\Redes\B_Best\",nomeRede);
+    caminhoRede = append("Trabalho\Out\Redes\App\",nomeRede);
     load(caminhoRede , 'net');
     
     [matrizBinaria , targetMatrix] = tratamentoDeImagem(nomePasta);
