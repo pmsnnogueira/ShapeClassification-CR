@@ -4,7 +4,7 @@ close all;
 
 neuronios = 50;
 
-fileID = fopen("a_testes.csv", "a");
+fileID = fopen("Trabalho/a_testes.csv", "a");
 
 [matrizBinaria,targetMatrix]=tratamentoDeImagem("start");
 
