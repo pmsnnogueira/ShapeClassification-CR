@@ -1,8 +1,7 @@
 function [accuracy_global] = treinamentoDeRede(topologia,matrizBinaria,targetMatrix,epochsValue,trainFuction, ...
                                                fuctionActivationHidden,fuctionActivationOutput,fuctionDivision, ...
-                                               trainValue,validateValue,testValue)
+                                               trainValue,validateValue,testValue,nomeRede)
 
-    disp(targetMatrix)
     %Treinar a Matriz
     net = feedforwardnet([topologia]);
     
@@ -44,4 +43,12 @@ function [accuracy_global] = treinamentoDeRede(topologia,matrizBinaria,targetMat
     end
     
     accuracy_global = (r/size(out,2)*100);
+
+    if nomeRede ~= ""
+        rede= "Trabalho\Out\Redes\App\RedeTreinoCriada_" + nomeRede + "_Accuracy" + accuracy_global + "_start" + ".mat";
+    else
+        rede= "Trabalho\Out\Redes\App\RedeTreinoCriada_" + "Default" + "_Accuracy" + accuracy_global + "_start" + ".mat";
+    end
+
+    save(rede , 'net');
 end
