@@ -1,0 +1,34 @@
+clc;
+clear;
+close all;
+
+load('Trabalho\Out\Redes\C\C_Best\C_Test_RedeTreino_Accuracy100_test' , 'net');
+
+[matrizBinaria,~]=tratamentoDeImagem("extra");
+
+out = round(sim(net , matrizBinaria));
+
+[~,b] = max(out);
+disp(b)
+    switch(b)
+        case 1
+            fprintf("circle");
+
+        case 2
+            fprintf("kite");
+
+        case 3
+            fprintf("parallelogram");
+
+        case 4 
+            fprintf("square");
+
+        case 5 
+            fprintf("trapezoid");
+
+        case 6 
+            fprintf("triangle");
+
+        otherwise
+            fprintf("Não foi possivel identificar");
+    end

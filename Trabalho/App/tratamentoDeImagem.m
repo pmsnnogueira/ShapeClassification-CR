@@ -14,6 +14,7 @@ function [matrizBinaria, targetMatrix] = tratamentoDeImagem(nomePasta)
             colunas = 10;
         case "extra"
             caminho = dir('Trabalho\Imagens\extra\**\*.png');
+            colunas = 2;
         otherwise
             return;
     end
